@@ -1,5 +1,7 @@
 import lombok.Builder;
+import lombok.Singular;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
@@ -7,16 +9,15 @@ enum Gender {
     MALE, FEMALE
 }
 
-@Builder
+@SuperBuilder
 @ToString
-public class User {
-    private String name;
+public class User extends Human {
     private int age;
     private Gender gender;
     private double weight;
     private double height;
     @Singular
-    public List<String> occupation;
+    public List<String> occupations;
 
 //    public User(String name, int age, Gender gender, double weight, double height) {
 //        this.name = name;
