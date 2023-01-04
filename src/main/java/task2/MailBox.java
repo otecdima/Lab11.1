@@ -16,7 +16,7 @@ public class MailBox {
 
     private void sendAll() throws MailjetSocketTimeoutException, MailjetException {
         for (MailInfo info: infos) {
-            MailSender.sendMail(info);
+            mailSender.sendMail(info);
         }
     }
 }
